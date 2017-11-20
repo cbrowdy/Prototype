@@ -16,7 +16,8 @@ if ($result->num_rows > 0) {
             session_start();
             $_SESSION["PSSWD"] = $psswd;
             $_SESSION["Email"] = $email;
-            echo"logged in";
+            header("Location: index.html");
+            exit();
         }
     }else{
         echo "could not log in";
