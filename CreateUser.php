@@ -2,7 +2,7 @@
 Require_Once("DBConnect.php");
 $email = str_replace("'","",trim($_POST["EMAIL"], " "));;
 $psswd = password_hash(str_replace("'"," ",trim($_POST["PSSWD"], " ")), PASSWORD_DEFAULT);
-$name = $_POST["firstName"]." ".$_POST["lastName"];
+$name = $_POST["NAME"];
 $sql = "SELECT id FROM Users WHERE Email='".$email."'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {

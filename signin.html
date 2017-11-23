@@ -1,101 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Java</title>
-	<div class="video" class="container">
-		<div class="row">
-			<div class="sign-in-form" style="margin-top: 60px;">
-				<div id="logo-container"></div>
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-					<form id="signInForm" action="Login.php" method="post">
-						<div class="form-group text-center">
-							
-						</div>
+	<meta charset="UTF-8">
+	<title>Create User</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900');
 
-						<div class="form-group input-group">
-							<input class="form-control" type="text" name='EMAIL' placeholder="Email"/>
-							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-						</div>
-						<div class="form-group input-group">
-							<input class="form-control" type="password" name='PSSWD' placeholder="Password"/>
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block">Sign In</button>
-						</div>
-						<div class="form-group text-center">
-							Don't have an account? <a href="signup.html">Sign Up</a>
-						</div>
-						<div class="form-group text-center">
-							<a href="{{pathFor 'resetPassword'}}">Forgot Password</a>&nbsp;|&nbsp;<a href="{{pathFor 'contact'}}">Contact us</a>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-<style>
-     @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900');
+		* { margin:0; padding:0; box-sizing:border-box; }
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
 
-        * { margin:0; padding:0; box-sizing:border-box; }
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
+		li {
+			float: left;
+		}
+		.right{
+			float: right;
+		}
 
-        li {
-            float: center;
-        }
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
 
-        .right{
-            float: right;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        /* Change the link color to #111 (black) on hover */
-        li a:hover {
-            background-color: #111;
-        }
-        .active {
-            background-color: #4CAF50;
-        }
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: #333;
-        }
-        .sidebar{
-            width: 15%;
-            height: 100vh;
-            background: rgb(255, 252, 220);
-            text-align: center;
-        }
-        .left{
-            float: left;
-        }
-        .video{
-            float: left;
-            height: 100vh;
-            width: 70%;
-           	
-        }
-
-</style>
+		/* Change the link color to #111 (black) on hover */
+		li a:hover {
+			background-color: #111;
+		}
+		.active {
+			background-color: #4CAF50;
+		}
+		body {
+			font-family: 'Source Sans Pro', sans-serif;
+			background: cornflowerblue;
+		}
+		#content{
+			content-align: center;
+			text-align: center;
+		}
+	</style>
+</head>
 <body>
-
-</div>
-	<ul>
-    <li><a href="java.html">Back to Main</a></li>
+<ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="personalhelp.html">Personal Help</a></li>
+	<li><a href="java.html">Java</a></li>
+	<li><a href="webtools.html">Web Tools</a></li>
+	<li><a href="c++.html">C++</a></li>
+	<li><a href="deeplearning.html">Deep Learning</a></li>
+	<li><a href="scratch.html">Scratch</a></li>
+	<li><a href="cotm.html">COTM</a></li>
+	<li class="right active"> <a href="cn.html">User</a></li>
 </ul>
+<div id="content" >
+	<h1>Sign In</h1>
+	<br>
+	<form action="Login.php" method="post">
+		<p>Email:</p>
+		<input type="email" name="EMAIL" class="panel panel-default"><br>
+		<p>Password:</p>
+		<input type="password" name="PSSWD" class="panel panel-default"><br><br>
+		<input type="submit" value="Login" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
+	</form>
+</div>
 </body>
-<script type="text/javascript" src="signin.js"></script>
+</html>
