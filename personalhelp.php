@@ -50,14 +50,14 @@
 </head>
 <body>
 <ul>
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li class="active"><a href="personalhelp.php">Personal Help</a></li>
-    <li><a href="java.html">Java</a></li>
-    <li><a href="webtools.html">Web Tools</a></li>
-    <li><a href="c.html">C++</a></li>
-    <li><a href="deeplearning.html">Deep Learning</a></li>
-    <li><a href="scratch.html">Scratch</a></li>
-    <li><a href="cotm.html">COTM</a></li>
+    <li><a href="java.php">Java</a></li>
+    <li><a href="webtools.php">Web Tools</a></li>
+    <li><a href="c.php">C++</a></li>
+    <li><a href="deeplearning.php">Deep Learning</a></li>
+    <li><a href="scratch.php">Scratch</a></li>
+    <li><a href="cotm.php">COTM</a></li>
     <li class="right"><a href="signinsignup.html">Login</a></li>
 </ul>
 <div id="content" >
@@ -65,11 +65,11 @@
     <br>
     <form action="Help_Request.php" method="post">
         <p>Name:</p>
-        <input type="text" name="NAME" class="panel panel-default"><br>
+        <input type="text" name="NAME" id="NAME" class="panel panel-default"><br>
         <p>Email:</p>
-        <input type="email" name="EMAIL" class="panel panel-default" value="<?php echo($_SESSION['Email'])?>"><br>
+        <input type="email" name="EMAIL" id="EMAIL" class="panel panel-default" value="<?php session_start(); echo($_SESSION["Email"]);?>"><br>
         <p>Question:</p>
-        <textarea name="Question" class="panel panel-default" cols="40" rows="6"></textarea><br><br>
+        <textarea name="Question" id="Question" class="panel panel-default" cols="40" rows="6"></textarea><br><br>
         <input type="submit" value="Submit" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
     </form>
 </div>

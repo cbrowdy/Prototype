@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
         if(password_verify($psswd, $pwd)){
             session_start();
             $_SESSION["Email"] = $email;
-            header("Location: index.html");
+            header("Location: index.php");
             exit();
         }
     }else{

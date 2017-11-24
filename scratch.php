@@ -36,14 +36,13 @@
         li a:hover {
             background-color: #111;
         }
-        body {
-            background: rgb(255, 252, 220);
+        .active {
+            background-color: #4CAF50;
         }
         body {
             font-family: 'Source Sans Pro', sans-serif;
             color: #333;
         }
-
         .sidebar{
             width: 15%;
             height: 100vh;
@@ -57,37 +56,38 @@
             float: left;
             height: 100vh;
             width: 70%;
-
         }
     </style>
 </head>
 <body>
 <ul>
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="personalhelp.php">Personal Help</a></li>
-    <li><a href="java.html">Java</a></li>
-    <li class="active"><a href="webtools.html">Web Tools</a></li>
-    <li><a href="c.html">C++</a></li>
-    <li><a href="deeplearning.html">Deep Learning</a></li>
-    <li><a href="scratch.html">Scratch</a></li>
-    <li><a href="cotm.html">COTM</a></li>
-    <li class="right"><a href="signinsignup.html">Login</a></li>
+    <li><a href="java.php">Java</a></li>
+    <li><a href="webtools.php">Web Tools</a></li>
+    <li><a href="c.php">C++</a></li>
+    <li><a href="deeplearning.php">Deep Learning</a></li>
+    <li class="active"><a href="scratch.php">Scratch</a></li>
+    <li><a href="cotm.php">COTM</a></li>
+    <?php
+    session_start();
+    if($_SESSION["Email"] != ""){
+        echo("<li class=\"right\"><a href=\"user.html\">My Account</a></li>");
+    }else{
+        echo("<li class=\"right\"><a href=\"signinsignup.html\">Login</a></li>");
+    }
+    ?>
 </ul>
-</body>
 <div class="sidebar left">
-    <h1>Webtools</h1>
-    <p>Playlists:
-
-
-    </p>
+    <h1>Scratch Course:</h1>
+    <p>Scratch playlist</p>
 </div>
 <div class="video">
-    <iframe width="100%" height="70%" src="https://www.youtube.com/embed/y3UH2gAhwPI" frameborder="0" allowfullscreen></iframe>
-    <iframe width="100%" height="70%" src="https://www.youtube.com/embed/fju9ii8YsGs" frameborder="0" allowfullscreen></iframe>
-
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/hIcLf-s96Go" frameborder="0" allowfullscreen></iframe>
 </div>
 <div class="sidebar right">
     <h1>Need Help?</h1>
-    Webtools Help ticket form
+    Scratch Help ticket form
 </div>
+</body>
 </html>

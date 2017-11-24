@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
                         if ($conn->query($sql) === TRUE) {
                             session_start();
                             $_SESSION["Email"] = $email;
-                            header("Location: index.html");
+                            header("Location: index.php");
                             exit();
 
                         } else {

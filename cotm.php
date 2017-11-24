@@ -47,15 +47,22 @@
 </head>
 <body>
 <ul>
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.php">Home</a></li>
     <li><a href="personalhelp.php">Personal Help</a></li>
-    <li><a href="java.html">Java</a></li>
-    <li><a href="webtools.html">Web Tools</a></li>
-    <li><a href="c.html">C++</a></li>
-    <li><a href="deeplearning.html">Deep Learning</a></li>
-    <li><a href="scratch.html">Scratch</a></li>
-    <li class="active"><a href="cotm.html">COTM</a></li>
-    <li class="right"><a href="signinsignup.html">Login</a></li>
+    <li><a href="java.php">Java</a></li>
+    <li><a href="webtools.php">Web Tools</a></li>
+    <li><a href="c.php">C++</a></li>
+    <li><a href="deeplearning.php">Deep Learning</a></li>
+    <li><a href="scratch.php">Scratch</a></li>
+    <li class="active"><a href="cotm.php">COTM</a></li>
+    <?php
+    session_start();
+    if($_SESSION["Email"] != ""){
+        echo("<li class=\"right\"><a href=\"user.html\">My Account</a></li>");
+    }else{
+        echo("<li class=\"right\"><a href=\"signinsignup.html\">Login</a></li>");
+    }
+    ?>
 </ul>
 </body>
 <div>
