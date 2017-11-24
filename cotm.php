@@ -57,7 +57,7 @@
     <li class="active"><a href="cotm.php">COTM</a></li>
     <?php
     session_start();
-    if($_SESSION["Email"] != ""){
+    if(isset($_SESSION['Email']) && !empty($_SESSION['Email'])){
         echo("<li class=\"right\"><a href=\"signout.php\">Sign Out</a></li>");
     }else{
         echo("<li class=\"right\"><a href=\"signinsignup.html\">Login</a></li>");
