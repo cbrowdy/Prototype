@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Personal Help</title>
+    <title>Create User</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+        @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900');
 
         * { margin:0; padding:0; box-sizing:border-box; }
         ul {
@@ -19,7 +19,6 @@
         li {
             float: left;
         }
-
         .right{
             float: right;
         }
@@ -36,12 +35,16 @@
         li a:hover {
             background-color: #111;
         }
-        body {
-            background: rgb(255, 252, 220);
+        .active {
+            background-color: #4CAF50;
         }
         body {
             font-family: 'Source Sans Pro', sans-serif;
-            color: #333;
+            background: cornflowerblue;
+        }
+        #content{
+            content-align: center;
+            text-align: center;
         }
     </style>
 </head>
@@ -51,15 +54,24 @@
     <li class="active"><a href="personalhelp.html">Personal Help</a></li>
     <li><a href="java.html">Java</a></li>
     <li><a href="webtools.html">Web Tools</a></li>
-    <li><a href="c++.html">C++</a></li>
+    <li><a href="c.html">C++</a></li>
     <li><a href="deeplearning.html">Deep Learning</a></li>
     <li><a href="scratch.html">Scratch</a></li>
     <li><a href="cotm.html">COTM</a></li>
     <li class="right"><a href="signinsignup.html">Login</a></li>
 </ul>
-</body>
-<div>
-    <h1> This Is The Personal Help Webpage </h1>
-<p> Leave this for now </p>
+<div id="content" >
+    <h1>Help Form</h1>
+    <br>
+    <form action="Help_Request.php" method="post">
+        <p>Name:</p>
+        <input type="text" name="NAME" class="panel panel-default"><br>
+        <p>Email:</p>
+        <input type="email" name="EMAIL" class="panel panel-default"><br>
+        <p>Question:</p>
+        <textarea name="Question" class="panel panel-default" cols="40" rows="6"></textarea><br><br>
+        <input type="submit" value="Submit" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
+    </form>
 </div>
+</body>
 </html>
