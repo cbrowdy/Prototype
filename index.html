@@ -1,42 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+   <!-- <link href="bootstrap for Community Code/css/bootstrap.css" rel="stylesheet" media="screen" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="UTF-8">
+
     <title>SMComSci</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900');
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        li {
-            float: left;
-        }
-        .right{
-            float: right;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        /* Change the link color to #111 (black) on hover */
-        li a:hover {
-            background-color: #111;
-        }
-        .active {
-            background-color: #4CAF50;
-        }
+   <style>
         body {
             font-family: 'Source Sans Pro', sans-serif;
         }
@@ -84,8 +59,14 @@
 </head>
 <body>
 
-<ul>
-    <li><a href="index.html" class="active">Home</a></li>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+     <li class="active"><a href="index.html" class="active">Home</a></li>
     <li><a href="personalhelp.html">Personal Help</a></li>
     <li><a href="java.html">Java</a></li>
     <li><a href="webtools.html">Web Tools</a></li>
@@ -93,8 +74,16 @@
     <li><a href="deeplearning.html">Deep Learning</a></li>
     <li><a href="scratch.html">Scratch</a></li>
     <li><a href="cotm.html">COTM</a></li>
-    <li class="right"><a href="cn.html">User</a></li>
-</ul>
+    <li><a href="cn.html">User</a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+
+   
+</nav>
+
 <div id="pomdiv">
     <div class="title">
         <h1>Project of the Month</h1>
@@ -110,4 +99,9 @@
     <p>Reccommended course and description here</p>
 </div>
 </body>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </html>

@@ -3,20 +3,19 @@
 <!-- <template name="signUp"> -->
 	<div class="container">
 		<div class="row">
-			<div class="sign-up-form" style="margin-top: 60px;">
-				<div id="logo-container"></div>
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+			<div style="margin-top: 60px;">
+				<div>Phone number, Birthdate, Consenting Adult, confirm passsword, login information (etc) </div>
+				<div>
 					<form id="signUpForm">
-
-						
+				
 						<div class="form-group text-center">
 							
 						</div>
 
 						<div class="row">
 							<div class="col-sm-6">
-								<div class="form-group">
-									<input class="form-control" type="text" name='firstName' placeholder="First Name"/>
+								<div>
+									<input type="text" name='firstName' placeholder="First Name"/>
 								</div>
 							</div>
 							<div class="col-sm-6">
@@ -30,22 +29,22 @@
 							<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 						</div>
 						<div class="form-group input-group">
-							<input class="form-control" type="password" name='password' placeholder="Password"/>
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+							<input type="password" name='password' placeholder="Password"/>
+							<span><i></i></span>
 						</div>
-						<!-- <div class="checkbox">
+						<div class="checkbox">
 							<label>
 								<input type="checkbox"> I agree to the <a href="#">Terms and Conditions</a>
 							</label>
-						</div> -->
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block">Sign Up</button>
 						</div>
-						<div class="form-group text-center">
+						<div class="form-group">
+							<button type="submit">Sign Up</button>
+						</div>
+						<div>
 							Already have an account? <a href="signin.html">Sign In</a>
 						</div>
-						<div class="form-group text-center">
-							<a href="{{pathFor 'resetPassword'}}">Forgot Password</a>&nbsp;|&nbsp;<a href="{{pathFor 'contact'}}">Contact us</a>
+						<div>
+							<a href="">Forgot Password</a>&nbsp;|&nbsp;<a href="form.html">Contact us</a>
 						</div>
 					</form>
 				</div>
