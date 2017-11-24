@@ -73,7 +73,7 @@
     <?php
     session_start();
     if($_SESSION["Email"] != ""){
-        echo("<li class=\"right\"><a href=\"user.html\">My Account</a></li>");
+        echo("<li class=\"right\"><a href=\"signout.php\">Sign Out</a></li>");
     }else{
         echo("<li class=\"right\"><a href=\"signinsignup.html\">Login</a></li>");
     }
