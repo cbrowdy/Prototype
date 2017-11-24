@@ -58,7 +58,14 @@
     <li><a href="deeplearning.php">Deep Learning</a></li>
     <li><a href="scratch.php">Scratch</a></li>
     <li><a href="cotm.php">COTM</a></li>
-    <li class="right"><a href="signinsignup.html">Login</a></li>
+    <?php
+    session_start();
+    if($_SESSION["Email"] != ""){
+        echo("<li class=\"right\"><a href=\"user.html\">My Account</a></li>");
+    }else{
+        echo("<li class=\"right\"><a href=\"signinsignup.html\">Login</a></li>");
+    }
+    ?>
 </ul>
 <div id="content" >
     <h1>Help Form</h1>
