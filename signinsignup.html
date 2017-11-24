@@ -88,7 +88,7 @@
 </script>
 <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="personalhelp.html">Personal Help</a></li>
+    <li><a href="personalhelp.php">Personal Help</a></li>
     <li><a href="java.html">Java</a></li>
     <li><a href="webtools.html">Web Tools</a></li>
     <li><a href="c.html">C++</a></li>
@@ -104,9 +104,9 @@
 	<br>
 	<form action="Login.php" method="post">
 		<p>Email:</p>
-		<input type="email" name="EMAIL" class="panel panel-default"><br>
+		<input type="email" id="EMAIL" name="EMAIL" class="panel panel-default"><br>
 		<p>Password:</p>
-		<input type="password" name="PSSWD" class="panel panel-default"><br><br>
+		<input type="password" id="PSSWD" name="PSSWD" class="panel panel-default"><br><br>
 		<input type="submit" value="Login" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
 	</form>
 </div>
@@ -114,11 +114,11 @@
 	<br>
 	<form action="CreateUser.php" method="post">
 		<p>Name:</p>
-		<input type="text" name="NAME" class="panel panel-default"><br>
+		<input type="text" name="NAME" id="NAME" class="panel panel-default"><br>
 		<p>Email:</p>
-		<input type="email" name="EMAIL" class="panel panel-default"><br>
+		<input type="email" name="EMAILCREATE" id="EMAILCREATE" class="panel panel-default"><br>
 		<p>Password:</p>
-		<input type="password" name="PSSWD" class="panel panel-default"><br><br>
+		<input type="password" name="PASSWORD" id="PASSWORD" class="panel panel-default"><br><br>
 		<input type="submit" value="Join" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
 	</form>
 </div>

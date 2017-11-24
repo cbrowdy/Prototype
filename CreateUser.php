@@ -1,7 +1,7 @@
 <?php
 Require_Once("DBConnect.php");
-$email = str_replace("'","",trim($_POST["EMAIL"], " "));
-$psswd = password_hash(str_replace("'"," ",trim($_POST["PSSWD"], " ")), PASSWORD_DEFAULT);
+$email = str_replace("'","",trim($_POST["EMAILCREATE"], " "));
+$psswd = password_hash(str_replace("'"," ",trim($_POST["PASSWORD"], " ")), PASSWORD_DEFAULT);
 $name = str_replace("'","",trim($_POST["NAME"], " "));
 $sql = "SELECT id FROM Users WHERE Email='".$email."'";
 $result = $conn->query($sql);
@@ -20,11 +20,12 @@ if ($result->num_rows > 0) {
             Role VARCHAR(255) NOT NULL,
             Value VARCHAR(255) NOT NULL);";
             if ($conn->query($sql) === TRUE) {
-                    echo "created table";
                     $sql = "INSERT INTO user_".$id." (Role, Value) VALUES ('Password', '".$psswd."')";
                     if ($conn->query($sql) === TRUE) {
                         $sql = "INSERT INTO user_".$id." (Role, Value) VALUES ('Name', '".$name."')";
                         if ($conn->query($sql) === TRUE) {
+                            session_start();
+                            $_SESSION["Email"] = $email;
                             header("Location: index.html");
                             exit();
 

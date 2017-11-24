@@ -51,7 +51,7 @@
 <body>
 <ul>
     <li><a href="index.html">Home</a></li>
-    <li class="active"><a href="personalhelp.html">Personal Help</a></li>
+    <li class="active"><a href="personalhelp.php">Personal Help</a></li>
     <li><a href="java.html">Java</a></li>
     <li><a href="webtools.html">Web Tools</a></li>
     <li><a href="c.html">C++</a></li>
@@ -67,7 +67,7 @@
         <p>Name:</p>
         <input type="text" name="NAME" class="panel panel-default"><br>
         <p>Email:</p>
-        <input type="email" name="EMAIL" class="panel panel-default"><br>
+        <input type="email" name="EMAIL" class="panel panel-default" value="<?php echo($_SESSION['Email'])?>"><br>
         <p>Question:</p>
         <textarea name="Question" class="panel panel-default" cols="40" rows="6"></textarea><br><br>
         <input type="submit" value="Submit" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">

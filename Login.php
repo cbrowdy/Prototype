@@ -14,7 +14,6 @@ if ($result->num_rows > 0) {
         $pwd = $row["Value"];
         if(password_verify($psswd, $pwd)){
             session_start();
-            $_SESSION["PSSWD"] = $psswd;
             $_SESSION["Email"] = $email;
             header("Location: index.html");
             exit();
@@ -25,7 +24,6 @@ if ($result->num_rows > 0) {
 }else{
     echo"could not find user";
     echo $email;
-    echo"hello";
 }
 
 

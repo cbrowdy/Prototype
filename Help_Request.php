@@ -6,7 +6,7 @@ $email = str_replace("'","",trim($_POST["EMAIL"], " "));
 $sql = "INSERT INTO Requests (Question, Name, Email) VALUES ('".$question."', '".$name."', '".$email."')";
 if ($conn->query($sql) === TRUE) {
     echo "request sucessfull";
-    header("Location: personalhelp.html");
+    header("Location: personalhelp.php");
 } else {
     echo "Error submitting request: " . $conn->error;
 }
