@@ -15,15 +15,18 @@ if ($result->num_rows > 0) {
         if(password_verify($psswd, $pwd)){
             session_start();
             $_SESSION["Email"] = $email;
-            header("Location: index.php");
-            exit();
+            echo("<script>var u = window.location.href.toString().replace('Login', 'index'); document.location=u;</script>");
+        }else{
+            echo("<script>alert('Incorrect Password');</script>");
+            echo("<script>var u = document.referrer; u += \"?param=refresh\"; document.location = u;</script>");
         }
     }else{
-        echo "could not log in";
+        echo("<script>alert('Could Not Find Password);</script>");
+        echo("<script>var u = document.referrer; u += \"?param=refresh\"; document.location = u;</script>");
     }
 }else{
-    echo"could not find user";
-    echo $email;
+    echo("<script>alert('An Account With This Email Does Not Exist');</script>");
+    echo("<script>var u = document.referrer; u += \"?param=refresh\"; document.location = u;</script>");
 }
 
 

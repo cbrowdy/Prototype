@@ -72,11 +72,22 @@
     <br>
     <form action="Help_Request.php" method="post">
         <p>Name:</p>
-        <input type="text" name="NAME" id="NAME" class="panel panel-default"><br>
+        <input type="text" name="NAME" id="NAME" class="panel panel-default" required><br>
         <p>Email:</p>
-        <input type="email" name="EMAIL" id="EMAIL" class="panel panel-default" value="<?php session_start(); echo($_SESSION["Email"]);?>"><br>
+        <input type="email" name="EMAIL" id="EMAIL" class="panel panel-default" value="<?php session_start(); echo($_SESSION["Email"]);?>" required><br>
+        <p>Problem Type:</p>
+        <select name="Type" required>
+            <option value="General">General</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="HTML/CSS">HTML/CSS</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Scratch">Scratch</option>
+            <option value="Machine Learning">Machine Learning</option>
+            <option value="Other">Other</option>
+        </select>
         <p>Question:</p>
-        <textarea name="Question" id="Question" class="panel panel-default" cols="40" rows="6"></textarea><br><br>
+        <textarea name="Question" id="Question" class="panel panel-default" cols="40" rows="6" required></textarea><br><br>
         <input type="submit" value="Submit" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
     </form>
 </div>

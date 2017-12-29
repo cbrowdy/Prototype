@@ -7,7 +7,8 @@ $sql = "SELECT id FROM Users WHERE Email='".$email."'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 // user account already exists
-    echo "User Already Exists";
+    echo("<script>alert('An Account With This Email Already Exists');</script>");
+    echo("<script>var u = window.location.href.toString().replace('CreateUser.php', 'signinsignup.html'); document.location=u;</script>");
 }else{
     $sql = "INSERT INTO Users (Email) VALUES ('".$email."')";
     if ($conn->query($sql) === TRUE) {
@@ -26,8 +27,7 @@ if ($result->num_rows > 0) {
                         if ($conn->query($sql) === TRUE) {
                             session_start();
                             $_SESSION["Email"] = $email;
-                            header("Location: index.php");
-                            exit();
+                            echo("<script>var u = window.location.href.toString().replace('CreateUser', 'index'); document.location=u;</script>");
 
                         } else {
                             echo "Error inserting user table: " . $conn->error;
@@ -42,8 +42,7 @@ if ($result->num_rows > 0) {
                 }
 
             $conn->close();
-        }
-        else{
+        } else{
             echo "Error selecting user: " . $conn->error;
         }
     }else{
