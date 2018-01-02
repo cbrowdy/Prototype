@@ -13,7 +13,7 @@
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
-			background-color: #333;
+			background-color: #004d66;
 		}
 
 		li {
@@ -25,7 +25,7 @@
 
 		li a {
 			display: block;
-			color: white;
+			color: whitesmoke;
 			text-align: center;
 			padding: 14px 16px;
 			text-decoration: none;
@@ -36,11 +36,11 @@
 			background-color: #111;
 		}
 		.active {
-			background-color: #4CAF50;
+			background-color: #333333;
 		}
 		body {
 			font-family: 'Source Sans Pro', sans-serif;
-			background-color: cornflowerblue;
+			background-color: whitesmoke;
 		}
 		.content{
 			content-align: center;
@@ -56,12 +56,12 @@
 			background-color: #111;
 		}
 		.activeBtn{
-			background-color: white;
+			background-color: #004d66;
 			color: #333333;
 		}
 		.inactiveBtn{
 			background-color: #333333;
-			color: white;
+			color: whitesmoke;
 		}
 		.hidden{
 			display: none;
@@ -72,6 +72,25 @@
 	</style>
 </head>
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<script>
+    function encrypt(id)
+    {
+        var pass=document.getElementById(id).value;
+        if(pass=="")
+        {
+            document.getElementById('err').innerHTML='Error:Password is missing';
+            return false;
+        }
+        else
+        {
+            var hash = CryptoJS.MD5(pass);
+            document.getElementById(id).value=hash;
+            return true;
+        }
+    }
+</script>
 <script>
 	function signinclick(){
         document.getElementById('Signin').className = "content visible";
@@ -100,26 +119,26 @@
 <div id="switcher" class="content">
 	<button class="activeBtn" id="signInButton" onclick="signinclick()"><h3>Sign In</h3></button><button id="signUpButton" onclick="signupclick()" class="inactiveBtn"><h3>Sign Up</h3></button>
 </div>
-<div class="content" id="Signin">
+<div class="content" id="Signin" onsubmit="encrypt('PSSWD')">
 	<br>
 	<form action="Login.php" method="post">
 		<p>Email:</p>
 		<input type="email" id="EMAIL" name="EMAIL" class="panel panel-default"><br>
 		<p>Password:</p>
 		<input type="password" id="PSSWD" name="PSSWD" class="panel panel-default"><br><br>
-		<input type="submit" value="Login" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
+		<input type="submit" value="Login" class="btn btn-primary" style="width: 70px; background-color: #004d66; border: none;">
 	</form>
 </div>
 <div class="content hidden" id="Signup">
 	<br>
-	<form action="CreateUser.php" method="post">
+	<form action="CreateUser.php" method="post" onsubmit="encrypt('PASSWORD')">
 		<p>Name:</p>
 		<input type="text" name="NAME" id="NAME" class="panel panel-default"><br>
 		<p>Email:</p>
 		<input type="email" name="EMAILCREATE" id="EMAILCREATE" class="panel panel-default"><br>
 		<p>Password:</p>
 		<input type="password" name="PASSWORD" id="PASSWORD" class="panel panel-default"><br><br>
-		<input type="submit" value="Join" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
+		<input type="submit" value="Join" class="btn btn-primary" style="width: 70px; background-color: #004d66; border: none;">
 	</form>
 </div>
 </body>
