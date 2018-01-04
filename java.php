@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #333;
+            background-color: #004d66;
         }
 
         li {
@@ -26,7 +26,7 @@
 
         li a {
             display: block;
-            color: white;
+            color: whitesmoke;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -37,17 +37,17 @@
             background-color: #111;
         }
         .active {
-            background-color: #4CAF50;
+            background-color: #333333;
         }
         body {
             font-family: 'Source Sans Pro', sans-serif;
             color: #333;
-            background-color: cornflowerblue;
+            background-color: whitesmoke;
         }
         .sidebar{
             width: 15%;
             height: 100vh;
-            background: cornflowerblue;
+            background: whitesmoke;
             text-align: center;
         }
         .left{
@@ -63,8 +63,8 @@
             border: none;
             height: 5%;
             width: 15%;
-            background-color: #333;
-            color: cornflowerblue;
+            background-color: #004d66;
+            color: white;
         }
         #prev{
             float: left;
@@ -81,9 +81,11 @@
         #playlist tr{
             border-top: solid 3px #333;
             border-bottom: solid 3px #333;
+            margin-right: 0px;
         }
         .activeLesson{
-            background-color: #4CAF50;
+            background-color: #004d66;
+            color: whitesmoke;
         }
     </style>
 </head>
@@ -261,7 +263,7 @@
         </tr>
     </table>
 </div>
-<div class="video">
+<div class="video" style="margin-left: -1px; margin-right: -1px;">
     <iframe id="videoFrame" width="100%" height="85%" src="https://www.youtube.com/embed/WPvGqX-TXP0" frameborder="0" allowfullscreen></iframe>
     <button type="button" id="prev" class="navbutton btn" onclick="prev()">Prev</button>
     <button type="button" id="save" class="navbutton btn" disabled="true" onclick="save()">Save Progress</button>
@@ -286,8 +288,8 @@
             <option value="Other">Other</option>
         </select>
         <p>Question:</p>
-        <textarea name="Question" id="Question" class="panel panel-default" cols="20" rows="6" required></textarea><br><br>
-        <input type="submit" value="Submit" class="btn btn-primary" style="width: 70px; background-color: #4CAF50; border: none;">
+        <textarea name="Question" id="Question" class="panel panel-default" cols="20" rows="6" required></textarea><br>
+        <input type="submit" value="Submit" class="btn btn-primary" style="width: 70px; background-color: #004d66; border: none;">
     </form>
 </div>
 </body>
