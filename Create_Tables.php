@@ -19,4 +19,14 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
+$sql = "CREATE TABLE Answers(
+    T VARCHAR(255) NOT NULL,
+    F VARCHAR(255) NOT NULL,
+    Subject VARCHAR(255) NOT NULL,
+    Message VARCHAR(255) NOT NULL)";
+if ($conn->query($sql) === TRUE) {
+    echo "created table";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 ?>
