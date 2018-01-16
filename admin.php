@@ -45,6 +45,9 @@ if(!password_verify($_POST["PSSWD"], $pw)){
         th:hover{
             background-color: lightgray;
         }
+        #respondDiv{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -104,16 +107,26 @@ if(!password_verify($_POST["PSSWD"], $pw)){
         }
     }
 </script>
+<script>
+    function respond(Type, Name, Email, Question){
+        document.getElementById("to").value = Email;
+        document.getElementById("message").value = "Hello, " + Name +"\n I am contacting you because you had a question about " + Type;
+        document.getElementById("question").value = Question;
+        document.getElementById("respondDiv").style = "display: block;";
+    }
+</script>
     <table id="questions">
         <col width="10%">
         <col width="15%">
         <col width="25%">
-        <col width="50%">
+        <col width="45%">
+        <col width="5%">
         <tr>
             <th onclick="sortTable(0)">Type</th>
             <th onclick="sortTable(1)">Name</th>
             <th onclick="sortTable(2)">Email</th>
             <th onclick="sortTable(3)">Question</th>
+            <th></th>
         </tr>
         <?php
         Require_Once("DBConnect.php");
@@ -121,11 +134,26 @@ if(!password_verify($_POST["PSSWD"], $pw)){
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo("<tr><td>".$row["Type"]."</td> <td>".$row["Name"]."</td> <td>".$row["Email"]."</td> <td>".$row["Question"]."</td></tr>");
+                echo("<tr><td>".$row["Type"]."</td> <td>".$row["Name"]."</td> <td>".$row["Email"]."</td> <td>".$row["Question"]."</td><td><button onclick='respond(\"".$row["Type"]."\", \"".$row["Name"]."\", \"".$row["Email"]."\", \"".$row["Question"]."\")'>Respond</button></td></tr>");
             }
         }else{
             echo("There Are No Help Requests At This Time");
         }
         ?>
     </table>
+<div id="respondDiv">
+    <form id="respondForm" action="sendanswer.php" method="post">
+        <p>Admin's Email:</p>
+        <input type="email" name="FROM" class="panel panel-default" id="from">
+        <p>Recipient's Email:</p>
+        <input type="email" name="TO" class="panel panel-default" id="to" required>
+        <p>Subject:</p>
+        <input type="text" name="SUBJECT" class="panel panel-default" id="subject" required>
+        <p>Message:</p>
+        <textarea name="MESSAGE" id="message" class="panel panel-default" cols="40" rows="6" required></textarea>
+        <p>Question:</p>
+        <textarea name="QUESTION" id="question" class="panel panel-default" cols="40" rows="6" required></textarea><br>
+        <input type="submit" value="Send">
+    </form>
+</div>
 </body>
